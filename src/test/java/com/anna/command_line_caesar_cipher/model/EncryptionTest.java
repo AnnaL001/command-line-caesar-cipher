@@ -4,6 +4,10 @@ import com.anna.command_line_caesar_cipher.model.parameter_resolver.EncryptionPa
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
+
+import javax.management.ConstructorParameters;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -52,5 +56,15 @@ class EncryptionTest {
   public void setOutput_setsEncryptionOutput(Encryption encryption) {
     encryption.setOutput("IFMMP");
     assertEquals("IFMMP", encryption.getOutput());
+  }
+
+  @ParameterizedTest
+  @CsvFileSource(resources = "/encrypt_text.csv")
+  @DisplayName("Test that Encryption is working as expected")
+  public void encrypt_encodesText(int key, String plainText, String encodedText,Encryption encryption) {
+    encryption.setInput(plainText);
+    encryption.setKey(key);
+    encryption.encrypt();
+    assertEquals(encodedText, encryption.getOutput());
   }
 }
