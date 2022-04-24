@@ -17,7 +17,7 @@ class EncryptionTest {
 
   @Test
   @DisplayName("Test for retrieval of the correct value of an encryption's input")
-  public void getInput_getsEncryptionInput_Hello(Encryption encryption) {
+  public void getInput_getsEncryptionInput_HELLO(Encryption encryption) {
     assertEquals("HELLO", encryption.getInput());
   }
 
