@@ -13,4 +13,10 @@ class DecryptionTest {
   public void newDecryption_instantiatesCorrectly(Decryption decryption) {
     assertNotNull(decryption);
   }
+
+  @Test
+  @DisplayName("Test for retrieval of the correct value of an decryption's input")
+  public void getInput_getsDecryptionInput_IFMMP(Decryption decryption) {
+    assertEquals("IFMMP", decryption.getInput());
+  }
 }
