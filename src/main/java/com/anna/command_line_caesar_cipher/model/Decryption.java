@@ -29,4 +29,8 @@ public class Decryption {
   public void setKey(int key) {
     this.key = key;
   }
+
+  public void setOutput(String output) {
+    this.output = output;
+  }
 }
