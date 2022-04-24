@@ -21,4 +21,8 @@ public class Decryption {
   public String getOutput(){
     return this.output;
   }
+
+  public void setInput(String input) {
+    this.input = input;
+  }
 }
