@@ -15,4 +15,5 @@ public class Encryption {
   public int getKey(){
     return this.key;
   }
+
 }
