@@ -3,9 +3,11 @@ package com.anna.command_line_caesar_cipher.model;
 public class Decryption {
   private String input;
   private int key;
+  private String output;
   public Decryption(String input, int key) {
     this.input = input;
     this.key = key;
+    this.output = "";
   }
 
   public String getInput(){
@@ -14,5 +16,9 @@ public class Decryption {
 
   public int getKey(){
     return this.key;
+  }
+
+  public String getOutput(){
+    return this.output;
   }
 }
