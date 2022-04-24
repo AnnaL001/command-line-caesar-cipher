@@ -25,4 +25,11 @@ class DecryptionTest {
   public void getKey_getsDecryptionKey_1(Decryption decryption) {
     assertEquals(1, decryption.getKey());
   }
+
+  @Test
+  @DisplayName("Test for retrieval of the correct value of a decryption's output")
+  public void getOutput_getsInitialOutput_EmptyString(Decryption decryption) {
+    assertEquals("", decryption.getOutput());
+  }
+
 }
