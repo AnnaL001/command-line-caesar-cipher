@@ -4,6 +4,8 @@ import com.anna.command_line_caesar_cipher.model.parameter_resolver.DecryptionPa
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 @ExtendWith(DecryptionParameterResolver.class)
@@ -51,5 +53,15 @@ class DecryptionTest {
   public void setOutput_setsDecryptionOutput(Decryption decryption) {
     decryption.setOutput("HI");
     assertEquals("HI", decryption.getOutput());
+  }
+
+  @ParameterizedTest
+  @CsvFileSource(resources = "/decrypt_text.csv")
+  @DisplayName("Test that Decryption is working as expected")
+  public void decrypt_decodesText(int key, String encodedText, String decodedText,Decryption decryption) {
+    decryption.setInput(encodedText);
+    decryption.setKey(key);
+    decryption.decrypt();
+    assertEquals(decodedText, decryption.getOutput());
   }
 }
