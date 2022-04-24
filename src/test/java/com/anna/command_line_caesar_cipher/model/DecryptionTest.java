@@ -33,9 +33,16 @@ class DecryptionTest {
   }
 
   @Test
-  @DisplayName("Test that Decryption's input property is set as specified")
+  @DisplayName("Test that Decryption class' input property is set as specified")
   public void setInput_setsDecryptionInput(Decryption decryption) {
     decryption.setInput("IJ");
     assertEquals("IJ", decryption.getInput());
+  }
+
+  @Test
+  @DisplayName("Test that Decryption class' key property is set as specified")
+  public void setKey_setsDecryptionKey(Decryption decryption) {
+    decryption.setKey(2);
+    assertEquals(2, decryption.getKey());
   }
 }
