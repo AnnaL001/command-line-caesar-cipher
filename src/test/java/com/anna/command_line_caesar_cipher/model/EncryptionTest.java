@@ -32,4 +32,11 @@ class EncryptionTest {
   public void getOutput_getsInitialEncryptionOutput_EmptyString(Encryption encryption) {
     assertEquals("", encryption.getOutput());
   }
+
+  @Test
+  @DisplayName("Test that Encryption's input property is set as specified")
+  public void setInput_setsEncryptionInput(Encryption encryption) {
+    encryption.setInput("Hi");
+    assertEquals("Hi", encryption.getInput());
+  }
 }
