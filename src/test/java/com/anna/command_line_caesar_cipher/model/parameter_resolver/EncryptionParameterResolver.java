@@ -14,6 +14,6 @@ public class EncryptionParameterResolver implements ParameterResolver {
 
   @Override
   public Object resolveParameter(ParameterContext parameterContext, ExtensionContext extensionContext) throws ParameterResolutionException {
-    return new Encryption("Hello", 1);
+    return new Encryption("HELLO", 1);
   }
 }

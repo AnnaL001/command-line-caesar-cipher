@@ -18,7 +18,7 @@ class EncryptionTest {
   @Test
   @DisplayName("Test for retrieval of the correct value of an encryption's input")
   public void getInput_getsEncryptionInput_Hello(Encryption encryption) {
-    assertEquals("Hello", encryption.getInput());
+    assertEquals("HELLO", encryption.getInput());
   }
 
   @Test
@@ -36,8 +36,8 @@ class EncryptionTest {
   @Test
   @DisplayName("Test that Encryption's input property is set as specified")
   public void setInput_setsEncryptionInput(Encryption encryption) {
-    encryption.setInput("Hi");
-    assertEquals("Hi", encryption.getInput());
+    encryption.setInput("HI");
+    assertEquals("HI", encryption.getInput());
   }
 
   @Test
