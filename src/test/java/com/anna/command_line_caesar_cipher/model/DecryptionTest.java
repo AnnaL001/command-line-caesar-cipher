@@ -45,4 +45,11 @@ class DecryptionTest {
     decryption.setKey(2);
     assertEquals(2, decryption.getKey());
   }
+
+  @Test
+  @DisplayName("Test that Decryption class' output property is set as specified")
+  public void setOutput_setsDecryptionOutput(Decryption decryption) {
+    decryption.setOutput("HI");
+    assertEquals("HI", decryption.getOutput());
+  }
 }
