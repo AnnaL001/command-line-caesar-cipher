@@ -27,4 +27,9 @@ class EncryptionTest {
     assertEquals(1, encryption.getKey());
   }
 
+  @Test
+  @DisplayName("Test for retrieval of the correct value of an encryption's output")
+  public void getOutput_getsInitialEncryptionOutput_EmptyString(Encryption encryption) {
+    assertEquals("", encryption.getOutput());
+  }
 }
