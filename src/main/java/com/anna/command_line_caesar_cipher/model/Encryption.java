@@ -39,6 +39,9 @@ public class Encryption {
     this.output = output;
   }
 
+  /**
+   * Handle encryption of single and multiple words
+   **/
   public void encrypt(){
     // Convert input to character array
     char[] inputArray = this.input.toCharArray();
@@ -55,6 +58,12 @@ public class Encryption {
     this.setOutput(String.valueOf(output));
   }
 
+  /**
+   * Handle encoding of lowercase characters
+   * @param output Encryption output's StringBuilder
+   * @param character Plaintext character to be encoded
+   * @param key Encryption key
+   **/
   public static void encodeLowercase(StringBuilder output, char character, int key){
     char newCharacter;
     try {
@@ -66,6 +75,12 @@ public class Encryption {
     }
   }
 
+  /**
+   * Handle encoding of uppercase characters
+   * @param output Encryption output's StringBuilder
+   * @param character Plaintext character to be encoded
+   * @param key Encryption key
+   **/
   public static void encodeUppercase(StringBuilder output, char character, int key){
     char newCharacter;
     try {
@@ -77,6 +92,13 @@ public class Encryption {
     }
   }
 
+  /**
+   * Handle shifting characters when within array bounds
+   * @param character Plain text letter to be encoded
+   * @param key Encryption key
+   * @param alphabets Array of alphabets; Uppercase or Lowercase
+   * @return Encoded letter
+   **/
   public static Character shiftWithoutException(char character, int key, ArrayList<Character> alphabets){
     int shift = alphabets.indexOf(character) + key;
     // Return replacement value
@@ -84,11 +106,17 @@ public class Encryption {
 
   }
 
+  /**
+   * Handle shifting characters when beyond array bounds
+   * @param character Plain text letter to be encoded
+   * @param key Encryption key
+   * @param alphabets Array of alphabets; Uppercase or Lowercase
+   * @return Encoded letter
+   **/
   public static Character shiftWithException(char character, int key, ArrayList<Character> alphabets){
     int shift = (alphabets.indexOf(character) + key) - 26;
     // Return replacement value
     return alphabets.get(shift);
   }
-
 }
 
