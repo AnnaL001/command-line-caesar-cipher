@@ -15,8 +15,14 @@ class DecryptionTest {
   }
 
   @Test
-  @DisplayName("Test for retrieval of the correct value of an decryption's input")
+  @DisplayName("Test for retrieval of the correct value of a decryption's input")
   public void getInput_getsDecryptionInput_IFMMP(Decryption decryption) {
     assertEquals("IFMMP", decryption.getInput());
+  }
+
+  @Test
+  @DisplayName("Test for retrieval of the correct value of a decryption's key")
+  public void getKey_getsDecryptionKey_1(Decryption decryption) {
+    assertEquals(1, decryption.getKey());
   }
 }
