@@ -32,4 +32,10 @@ class DecryptionTest {
     assertEquals("", decryption.getOutput());
   }
 
+  @Test
+  @DisplayName("Test that Decryption's input property is set as specified")
+  public void setInput_setsDecryptionInput(Decryption decryption) {
+    decryption.setInput("IJ");
+    assertEquals("IJ", decryption.getInput());
+  }
 }
