@@ -46,4 +46,11 @@ class EncryptionTest {
     encryption.setKey(2);
     assertEquals(2, encryption.getKey());
   }
+
+  @Test
+  @DisplayName("Test that Encryption's output property is set as specified")
+  public void setOutput_setsEncryptionOutput(Encryption encryption) {
+    encryption.setOutput("IFMMP");
+    assertEquals("IFMMP", encryption.getOutput());
+  }
 }
