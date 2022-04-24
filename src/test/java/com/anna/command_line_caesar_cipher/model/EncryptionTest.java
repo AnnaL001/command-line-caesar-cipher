@@ -20,4 +20,11 @@ class EncryptionTest {
   public void getInput_getsEncryptionInput_Hello(Encryption encryption) {
     assertEquals("Hello", encryption.getInput());
   }
+
+  @Test
+  @DisplayName("Test for retrieval of the correct value of an encryption's key")
+  public void getKey_getsEncryptionKey_1(Encryption encryption) {
+    assertEquals(1, encryption.getKey());
+  }
+
 }
