@@ -11,8 +11,13 @@ import static org.junit.jupiter.api.Assertions.*;
 class EncryptionTest {
   @Test
   @DisplayName("Test for correct instantiation of Encryption class")
-  public void newEncryption_instantiatesCorrectly() {
-    Encryption encryption = new Encryption("Hello", 1);
-    assertTrue(encryption instanceof Encryption);
+  public void newEncryption_instantiatesCorrectly(Encryption encryption) {
+    assertNotNull(encryption);
+  }
+
+  @Test
+  @DisplayName("Test for retrieval of the correct value of an encryption's input")
+  public void getInput_getsEncryptionInput_Hello(Encryption encryption) {
+    assertEquals("Hello", encryption.getInput());
   }
 }
