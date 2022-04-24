@@ -30,4 +30,8 @@ public class Encryption {
     this.key = key;
   }
 
+  public void setOutput(String output) {
+    this.output = output;
+  }
+
 }
