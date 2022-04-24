@@ -25,4 +25,8 @@ public class Decryption {
   public void setInput(String input) {
     this.input = input;
   }
+
+  public void setKey(int key) {
+    this.key = key;
+  }
 }
