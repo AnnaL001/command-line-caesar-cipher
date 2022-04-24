@@ -39,4 +39,11 @@ class EncryptionTest {
     encryption.setInput("Hi");
     assertEquals("Hi", encryption.getInput());
   }
+
+  @Test
+  @DisplayName("Test that Encryption's key property is set as specified")
+  public void setKey_setsEncryptionKey(Encryption encryption) {
+    encryption.setKey(2);
+    assertEquals(2, encryption.getKey());
+  }
 }
