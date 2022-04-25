@@ -36,21 +36,21 @@ class EncryptionTest {
   }
 
   @Test
-  @DisplayName("Test that Encryption's input property is set as specified")
+  @DisplayName("Test that Encryption class' input property is set as specified")
   public void setInput_setsEncryptionInput(Encryption encryption) {
     encryption.setInput("HI");
     assertEquals("HI", encryption.getInput());
   }
 
   @Test
-  @DisplayName("Test that Encryption's key property is set as specified")
+  @DisplayName("Test that Encryption class' key property is set as specified")
   public void setKey_setsEncryptionKey(Encryption encryption) {
     encryption.setKey(2);
     assertEquals(2, encryption.getKey());
   }
 
   @Test
-  @DisplayName("Test that Encryption's output property is set as specified")
+  @DisplayName("Test that Encryption class' output property is set as specified")
   public void setOutput_setsEncryptionOutput(Encryption encryption) {
     encryption.setOutput("IFMMP");
     assertEquals("IFMMP", encryption.getOutput());
