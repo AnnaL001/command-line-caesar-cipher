@@ -57,8 +57,18 @@ class DecryptionTest {
 
   @ParameterizedTest
   @CsvFileSource(resources = "/decrypt_text.csv")
-  @DisplayName("Test that Decryption is working as expected")
-  public void decrypt_decodesText(int key, String encodedText, String decodedText,Decryption decryption) {
+  @DisplayName("Test that decryption of a single word is working as expected")
+  public void decrypt_decodesWord(int key, String encodedText, String decodedText,Decryption decryption) {
+    decryption.setInput(encodedText);
+    decryption.setKey(key);
+    decryption.decrypt();
+    assertEquals(decodedText, decryption.getOutput());
+  }
+
+  @ParameterizedTest
+  @CsvFileSource(resources = "/decrypt_multiple_text.csv")
+  @DisplayName("Test that decryption of multiple words is working as expected")
+  public void decrypt_decodesMultipleWords(int key, String encodedText, String decodedText,Decryption decryption) {
     decryption.setInput(encodedText);
     decryption.setKey(key);
     decryption.decrypt();
