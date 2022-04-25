@@ -60,8 +60,18 @@ class EncryptionTest {
 
   @ParameterizedTest
   @CsvFileSource(resources = "/encrypt_text.csv")
-  @DisplayName("Test that Encryption is working as expected")
+  @DisplayName("Test that encryption is working as expected")
   public void encrypt_encodesText(int key, String plainText, String encodedText,Encryption encryption) {
+    encryption.setInput(plainText);
+    encryption.setKey(key);
+    encryption.encrypt();
+    assertEquals(encodedText, encryption.getOutput());
+  }
+
+  @ParameterizedTest
+  @CsvFileSource(resources = "/encrypt_multiple_text.csv")
+  @DisplayName("Test that encryption of multiple words is working as expected")
+  public void encrypt_encodesMultipleText(int key, String plainText, String encodedText,Encryption encryption) {
     encryption.setInput(plainText);
     encryption.setKey(key);
     encryption.encrypt();
