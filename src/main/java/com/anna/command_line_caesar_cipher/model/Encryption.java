@@ -54,18 +54,18 @@ public class Encryption {
       } else if(Character.isLowerCase(character)) {
         encodeLowercase(output, character, this.key);
       } else {
-        handleNonCharacters(output, character);
+        handleNonAlphabets(output, character);
       }
     }
     this.setOutput(String.valueOf(output));
   }
 
   /**
-   * Handle non alphabet characters such as punctuation and spaces
+   * Handle encoding non alphabet characters such as punctuation and spaces
    * @param character Non alphabet character
    * @param output Encryption output's StringBuilder
    */
-  private static void handleNonCharacters(StringBuilder output, char character){
+  private static void handleNonAlphabets(StringBuilder output, char character){
     output.append(character);
   }
 
