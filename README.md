@@ -20,10 +20,10 @@ The Java application makes use of the caesar cipher encryption algorithm to encr
 | **Behavior**                              | **Input Example**                           | **Output**                                                         |
 |-------------------------------------------|:--------------------------------------------|:-------------------------------------------------------------------|
 | When key provided contains text instead of digits       | key = hi    | User receives feedback advising them to use digits(1 -25) for a key    |
-| When one word is provided for encryption input            | input = Hello, key = 1            | output = Ifmmp     |
-| When multiple words are provided for encryption input          | input = Hello World, key = 1   | output = Ifmmp Xpsme   |
-| When one word is provided for decryption input | input = Ifmmp, key = 1          | output = Hello |
-| When multiple words are provided for decryption input            | input = Ifmmp Xpsme, key = 1  | output = Hello World |   
+| When one word is provided for encryption input            | input = Hello <br> key = 1            | output = Ifmmp     |
+| When multiple words are provided for encryption input          | input = Hello World <br> key = 1   | output = Ifmmp Xpsme   |
+| When one word is provided for decryption input | input = Ifmmp <br> key = 1          | output = Hello |
+| When multiple words are provided for decryption input            | input = Ifmmp Xpsme <br> key = 1  | output = Hello World |   
 
 ## Dependencies
 
