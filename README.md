@@ -24,6 +24,8 @@ The Java application makes use of the caesar cipher encryption algorithm to encr
 | When multiple words are provided for encryption input          | input = Hello World <br> key = 1   | output = Ifmmp Xpsme   |
 | When one word is provided for decryption input | input = Ifmmp <br> key = 1          | output = Hello |
 | When multiple words are provided for decryption input            | input = Ifmmp Xpsme <br> key = 1  | output = Hello World |   
+| When shift goes beyond bounds of alphabet arraylist during encryption | input = Hello <br> key = 12 | output = Tqxxa | 
+| When shift goes beyond bounds of alphabet arraylist during decryption | input = Tqxxa <br> key = 12 | output = Hello |
 
 ## Dependencies
 
