@@ -58,7 +58,7 @@ class EncryptionTest {
 
   @ParameterizedTest
   @CsvFileSource(resources = "/encrypt_text.csv")
-  @DisplayName("Test that encryption is working as expected")
+  @DisplayName("Test that encryption of a single word is working as expected")
   public void encrypt_encodesWord(int key, String plainText, String encodedText,Encryption encryption) {
     encryption.setInput(plainText);
     encryption.setKey(key);
