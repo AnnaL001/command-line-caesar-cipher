@@ -42,7 +42,7 @@ public class Main {
     System.out.println("Enter plaintext to be encrypted/decrypted: ");
     String inputText = gatherStringInput();
     System.out.println("Enter key(1-25) that you would like to encrypt/decrypt text with: ");
-    int key = gatherNumberInput();
+    int key = gatherKeyInput();
 
     // Populate hashmap
     operationsInput.put("selection", selection);
@@ -55,12 +55,19 @@ public class Main {
     return scanner.nextLine();
   }
 
-  private static int gatherNumberInput(){
+  private static int gatherKeyInput(){
     int numberInput = 0;
     try {
-      numberInput = scanner.nextInt();
+      int number = scanner.nextInt();
+      if(number < 1 || number > 25){
+        System.out.println("Only keys 1 - 25 are allowed");
+        System.exit(0);
+      } else {
+        numberInput = number;
+      }
     } catch (InputMismatchException e){
       System.out.println("The key should only contain digits ranging from 1 - 25");
+      System.exit(0);
     }
     return numberInput;
   }
