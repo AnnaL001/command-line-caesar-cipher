@@ -50,12 +50,23 @@ public class Encryption {
 
     for (char character : inputArray) {
       if (Character.isUpperCase(character)) {
-        encodeUppercase(output, character, key);
+        encodeUppercase(output, character, this.key);
+      } else if(Character.isLowerCase(character)) {
+        encodeLowercase(output, character, this.key);
       } else {
-        encodeLowercase(output, character, key);
+        handleNonCharacters(output, character);
       }
     }
     this.setOutput(String.valueOf(output));
+  }
+
+  /**
+   * Handle non-characters such as punctuation and spaces
+   * @param character Non-character
+   * @param output Encryption output's StringBuilder
+   */
+  private static void handleNonCharacters(StringBuilder output, char character){
+    output.append(character);
   }
 
   /**
@@ -64,7 +75,7 @@ public class Encryption {
    * @param character Plaintext character to be encoded
    * @param key Encryption key
    **/
-  public static void encodeLowercase(StringBuilder output, char character, int key){
+  private static void encodeLowercase(StringBuilder output, char character, int key){
     char newCharacter;
     try {
       newCharacter = shiftWithoutException(character, key, LOWERCASE_ALPHABET);
@@ -81,7 +92,7 @@ public class Encryption {
    * @param character Plaintext character to be encoded
    * @param key Encryption key
    **/
-  public static void encodeUppercase(StringBuilder output, char character, int key){
+  private static void encodeUppercase(StringBuilder output, char character, int key){
     char newCharacter;
     try {
       newCharacter = shiftWithoutException(character, key, UPPERCASE_ALPHABET);
@@ -99,7 +110,7 @@ public class Encryption {
    * @param alphabets Array of alphabets; Uppercase or Lowercase
    * @return Encoded letter
    **/
-  public static Character shiftWithoutException(char character, int key, ArrayList<Character> alphabets){
+  private static Character shiftWithoutException(char character, int key, ArrayList<Character> alphabets){
     int shift = alphabets.indexOf(character) + key;
     // Return replacement value
     return alphabets.get(shift);
@@ -113,7 +124,7 @@ public class Encryption {
    * @param alphabets Array of alphabets; Uppercase or Lowercase
    * @return Encoded letter
    **/
-  public static Character shiftWithException(char character, int key, ArrayList<Character> alphabets){
+  private static Character shiftWithException(char character, int key, ArrayList<Character> alphabets){
     int shift = (alphabets.indexOf(character) + key) - 26;
     // Return replacement value
     return alphabets.get(shift);
