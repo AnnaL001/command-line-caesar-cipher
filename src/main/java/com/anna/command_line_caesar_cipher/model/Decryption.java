@@ -52,11 +52,22 @@ public class Decryption {
     for (char character : inputArray) {
       if (Character.isUpperCase(character)) {
         decodeUppercase(output, character, key);
-      } else {
+      } else if(Character.isLowerCase(character)) {
         decodeLowercase(output, character, key);
+      } else {
+        handleNonAlphabets(output, character);
       }
     }
     this.setOutput(String.valueOf(output));
+  }
+
+  /**
+   * Handle decoding non alphabet characters such as punctuation and spaces
+   * @param character Non alphabet character
+   * @param output Decryption output's StringBuilder
+   */
+  private static void handleNonAlphabets(StringBuilder output, char character){
+    output.append(character);
   }
 
   /**
