@@ -4,8 +4,7 @@
 
 ## Description
 
-The Java application makes use of the caesar cipher encryption algorithm to encrypt and decrypt text input. Encryption/Decryption is done using a key(1-25) that determines which letter down/up the alphabet will replace a letter in the text input. The application also contains JUnit tests that check that the backend logic is working as expected. That is, in the development of the application TDD(Test Driven Development) has been used alongside BDD(Behavior Driven Development).
-
+The Java application makes use of the caesar cipher encryption algorithm to encrypt and decrypt text input. Encryption/Decryption is done using a key(1-25) that determines which letter down/up the alphabet will replace a letter in the text input. The application also contains JUnit tests that check that the backend logic is working as expected in various scenarios as listed in the Behavior Driven Development section below. That is, in the development of the application TDD(Test Driven Development) has been used alongside BDD(Behavior Driven Development).
 
 #### By **[Lynn Nyangon](https://github.com/AnnaL001)**
 
@@ -15,6 +14,7 @@ The Java application makes use of the caesar cipher encryption algorithm to encr
 - To access the Java application's code from your GitHub repository, you can fork the repository main's branch via the 'Fork' button.
 - To access the Java application's code locally, you can clone the main branch or download the ZIP folder via the 'Code' button
 - Once locally, you can view/run the Java application's code via a text editor(VS Code or Sublime Text) or an IDE(IntelliJ).
+- In the case of IntelliJ, to navigate you can reference their documentation https://www.jetbrains.com/help/idea/getting-started.html
 
 ## Behavior Driven Development(BDD)
 | **Behavior**                              | **Input Example**                           | **Output**                                                         |
