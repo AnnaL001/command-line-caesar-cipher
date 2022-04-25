@@ -7,8 +7,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-import javax.management.ConstructorParameters;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(EncryptionParameterResolver.class)
