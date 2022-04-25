@@ -16,6 +16,15 @@ The Java application makes use of the caesar cipher encryption algorithm to encr
 - To access the Java application's code locally, you can clone the main branch or download the ZIP folder via the 'Code' button
 - Once locally, you can view/run the Java application's code via a text editor(VS Code or Sublime Text) or an IDE(IntelliJ).
 
+## Behavior Driven Development(BDD)
+| **Behavior**                              | **Input Example**                           | **Output**                                                         |
+|-------------------------------------------|:--------------------------------------------|:-------------------------------------------------------------------|
+| When key provided contains text instead of digits       | key = hi    | User receives feedback advising them to use digits(1 -25) for a key    |
+| When one word is provided for encryption input            | input = Hello, key = 1            | output = Ifmmp     |
+| When multiple words are provided for encryption input          | input = Hello World, key = 1   | output = Ifmmp Xpsme   |
+| When one word is provided for decryption input | input = Ifmmp, key = 1          | output = Hello |
+| When multiple words are provided for decryption input            | input = Ifmmp Xpsme, key = 1  | output = Hello World |   
+
 ## Dependencies
 
 - JUnit 5 - For testing backend logic
