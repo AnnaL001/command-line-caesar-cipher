@@ -61,8 +61,8 @@ public class Encryption {
   }
 
   /**
-   * Handle non-characters such as punctuation and spaces
-   * @param character Non-character
+   * Handle non alphabet characters such as punctuation and spaces
+   * @param character Non alphabet character
    * @param output Encryption output's StringBuilder
    */
   private static void handleNonCharacters(StringBuilder output, char character){
